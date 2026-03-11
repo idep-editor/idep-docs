@@ -1,0 +1,193 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+---
+
+<StarlightPage frontmatter={{ title: 'Idep Documentation', template: 'splash' }}>
+
+<style is:global>
+  /* Hide the auto-rendered page title that appears before hero-wrap */
+  h1:not(.hero-title) {
+    display: none !important;
+  }
+
+  .hero-wrap {
+    padding: 5rem 2rem 4rem;
+    text-align: center;
+    border-bottom: 1px solid var(--sl-color-hairline);
+  }
+
+  .hero-eyebrow {
+    display: inline-block;
+    font-family: 'Geist Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--sl-color-accent);
+    background: color-mix(in srgb, var(--sl-color-accent) 10%, transparent);
+    border: 1px solid color-mix(in srgb, var(--sl-color-accent) 30%, transparent);
+    border-radius: 4px;
+    padding: 0.25rem 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-title {
+    font-family: 'Fraunces', Georgia, serif;
+    font-variation-settings: 'WONK' 1, 'opsz' 144;
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: var(--sl-color-gray-1);
+    margin: 0 0 1.25rem;
+  }
+
+  .hero-title .accent {
+    color: var(--sl-color-accent);
+  }
+
+  .hero-sub {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    color: var(--sl-color-gray-2);
+    max-width: 520px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.7;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.7rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: opacity 0.15s;
+  }
+  .btn:hover { opacity: 0.85; }
+
+  .btn-primary {
+    background: var(--sl-color-accent);
+    color: #0F0D0B;
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--sl-color-gray-1);
+    border: 1px solid var(--sl-color-hairline);
+  }
+
+  /* Cards */
+  .cards-wrap {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    max-width: 900px;
+    margin: 3.5rem auto 0;
+    padding: 0 2rem;
+  }
+
+  .card {
+    background: var(--sl-color-bg-nav);
+    border: 1px solid var(--sl-color-hairline);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: left;
+    text-decoration: none;
+    transition: border-color 0.15s;
+  }
+  .card:hover { border-color: var(--sl-color-accent); }
+
+  .card-icon {
+    font-family: 'Geist Mono', monospace;
+    font-size: 1.25rem;
+    color: var(--sl-color-accent);
+    margin-bottom: 0.75rem;
+  }
+
+  .card-title {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--sl-color-gray-1);
+    margin: 0 0 0.4rem;
+  }
+
+  .card-desc {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 0.875rem;
+    color: var(--sl-color-gray-2);
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  /* Version strip */
+  .version-strip {
+    font-family: 'Geist Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--sl-color-gray-2);
+    text-align: center;
+    padding: 2rem 1rem 0;
+  }
+  .version-strip a {
+    color: var(--sl-color-accent);
+    text-decoration: none;
+  }
+</style>
+
+<div class="hero-wrap">
+  <span class="hero-eyebrow">v0.0.1 · Pre-alpha · Apache 2.0</span>
+
+  <h1 class="hero-title">
+    The IDE that<br/>
+    thinks <span class="accent">with</span> you
+  </h1>
+
+  <p class="hero-sub">
+    Rust-native, local-first, any AI backend.<br/>
+    Your codebase never leaves your machine.
+  </p>
+
+  <div class="hero-actions">
+    <a href="/getting-started/installation/" class="btn btn-primary">Get Started →</a>
+    <a href="/configuration/backends/" class="btn btn-secondary">Configure Backends</a>
+    <a href="https://github.com/idep-editor/idep" class="btn btn-secondary" target="_blank" rel="noopener">GitHub ↗</a>
+  </div>
+</div>
+
+<div class="cards-wrap">
+  <a href="/getting-started/installation/" class="card">
+    <div class="card-icon">01</div>
+    <p class="card-title">Installation</p>
+    <p class="card-desc">Clone, build from source, copy your config. Five minutes.</p>
+  </a>
+  <a href="/configuration/backends/" class="card">
+    <div class="card-icon">02</div>
+    <p class="card-title">Backends</p>
+    <p class="card-desc">Ollama, Anthropic, HuggingFace, or any OpenAI-compatible endpoint.</p>
+  </a>
+  <a href="/configuration/overview/" class="card">
+    <div class="card-icon">03</div>
+    <p class="card-title">Configuration</p>
+    <p class="card-desc">One TOML file. XDG-spec paths. Switch backends without restarting.</p>
+  </a>
+  <a href="/contributing/overview/" class="card">
+    <div class="card-icon">04</div>
+    <p class="card-title">Contributing</p>
+    <p class="card-desc">Apache 2.0, build-in-public. PRs and issues welcome.</p>
+  </a>
+</div>
+
+<p class="version-strip">
+  Current release: <a href="https://github.com/idep-editor/idep/releases/tag/v0.0.1">v0.0.1</a>
+  · Next: v0.0.2 — Ollama completions end-to-end
+  · <a href="https://idep.dev">idep.dev ↗</a>
+</p>
+
+</StarlightPage>

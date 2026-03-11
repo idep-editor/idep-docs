@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=DM+Sans:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap');
+
+:root {
+  --sl-color-accent-low:   #A67E2E;
+  --sl-color-accent:       #E8B44A;
+  --sl-color-accent-high:  #F5D080;
+  --sl-font:               'DM Sans', system-ui, sans-serif;
+  --sl-font-mono:          'Geist Mono', 'Fira Code', monospace;
+}
+
+/* Dark theme (default) */
+[data-theme='dark'],
+:root {
+  --sl-color-bg:           #0F0D0B;
+  --sl-color-bg-nav:       #1C1916;
+  --sl-color-bg-sidebar:   #1C1916;
+  --sl-color-hairline:     #2E2B27;
+  --sl-color-gray-1:       #F5F0E8;
+  --sl-color-gray-2:       #B8A99A;
+}
+
+/* Light theme */
+[data-theme='light'] {
+  --sl-color-bg:           #FEFDFB;
+  --sl-color-bg-nav:       #F5F0E8;
+  --sl-color-bg-sidebar:   #F5F0E8;
+  --sl-color-hairline:     #E8DFD5;
+  --sl-color-gray-1:       #1C1916;
+  --sl-color-gray-2:       #6B5F52;
+}
+
+/* Display font for headings */
+h1, h2, .hero h1 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-variation-settings: 'WONK' 1;
+}
+
+
