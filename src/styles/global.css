@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=DM+Sans:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap');
+
+:root {
+  --bg: #0f0d0b;
+  --surface: #1c1916;
+  --border: #2e2b27;
+  --text: #f5f0e8;
+  --muted: #b8a99a;
+  --accent: #e8b44a;
+  --accent-strong: #a67e2e;
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-mono: 'Geist Mono', 'Fira Code', monospace;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+main { max-width: 960px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+
+h1, h2, h3 { font-family: var(--font-display); color: var(--text); margin: 0 0 0.75rem; }
+p { margin: 0 0 1rem; color: var(--muted); }
+
+section { margin-bottom: 2.5rem; }
+
+code, pre { font-family: var(--font-mono); background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+code { padding: 0.12rem 0.35rem; border-radius: 4px; }
+pre { padding: 1rem; border-radius: 8px; overflow: auto; }
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.cards-3 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+
+.card {
+  padding: 1rem;
+  border-radius: 10px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+.table th, .table td {
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  text-align: left;
+}
+.table th { color: var(--text); }
+.table td { color: var(--muted); }
+
+.kbd {
+  font-family: var(--font-mono);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.2rem 0.5rem;
+}

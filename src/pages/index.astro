@@ -142,7 +142,7 @@ import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 </style>
 
 <div class="hero-wrap">
-  <span class="hero-eyebrow">v0.0.1 · Pre-alpha · Apache 2.0</span>
+  <span class="hero-eyebrow">v0.0.2 · Pre-alpha · Apache 2.0</span>
 
   <h1 class="hero-title">
     The IDE that<br/>
@@ -155,38 +155,58 @@ import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
   </p>
 
   <div class="hero-actions">
-    <a href="/getting-started/installation/" class="btn btn-primary">Get Started →</a>
-    <a href="/configuration/backends/" class="btn btn-secondary">Configure Backends</a>
+    <a href="/getting-started/" class="btn btn-primary">Get Started →</a>
+    <a href="/configuration/" class="btn btn-secondary">Configuration</a>
     <a href="https://github.com/idep-editor/idep" class="btn btn-secondary" target="_blank" rel="noopener">GitHub ↗</a>
   </div>
 </div>
 
-<div class="cards-wrap">
-  <a href="/getting-started/installation/" class="card">
-    <div class="card-icon">01</div>
-    <p class="card-title">Installation</p>
-    <p class="card-desc">Clone, build from source, copy your config. Five minutes.</p>
-  </a>
-  <a href="/configuration/backends/" class="card">
-    <div class="card-icon">02</div>
-    <p class="card-title">Backends</p>
-    <p class="card-desc">Ollama, Anthropic, HuggingFace, or any OpenAI-compatible endpoint.</p>
-  </a>
-  <a href="/configuration/overview/" class="card">
-    <div class="card-icon">03</div>
-    <p class="card-title">Configuration</p>
-    <p class="card-desc">One TOML file. XDG-spec paths. Switch backends without restarting.</p>
-  </a>
-  <a href="/contributing/overview/" class="card">
-    <div class="card-icon">04</div>
-    <p class="card-title">Contributing</p>
-    <p class="card-desc">Apache 2.0, build-in-public. PRs and issues welcome.</p>
-  </a>
-</div>
+<section style="max-width: 900px; margin: 4rem auto 0; padding: 0 2rem;">
+  <h2 style="font-size: 1.75rem; margin-bottom: 1.5rem;">Overview</h2>
+  <p style="color: var(--sl-color-gray-2); line-height: 1.8; margin-bottom: 2rem;">
+    Idep is a Rust-native AI-powered IDE with local-first architecture. Connect any AI backend — Ollama for local inference, Anthropic for Claude, HuggingFace, or OpenAI-compatible endpoints. Your codebase never leaves your machine. v0.0.2 ships with end-to-end completions and chat streaming.
+  </p>
+
+  <h2 style="font-size: 1.75rem; margin-bottom: 1.5rem;">What's New in v0.0.2</h2>
+  <div style="display: grid; gap: 1.5rem; margin-bottom: 2rem;">
+    <div style="padding: 1rem; border-left: 3px solid var(--sl-color-accent); background: var(--sl-color-bg-nav); border-radius: 6px;">
+      <h3 style="margin: 0 0 0.5rem; font-size: 1rem;">Completions</h3>
+      <p style="margin: 0; color: var(--sl-color-gray-2); font-size: 0.95rem;">CompletionEngine wired to llm-ls LSP bridge. Configurable debounce (default 300ms), stop-sequence handling, FIM token validation for DeepSeek, StarCoder, CodeLlama.</p>
+    </div>
+    <div style="padding: 1rem; border-left: 3px solid var(--sl-color-accent); background: var(--sl-color-bg-nav); border-radius: 6px;">
+      <h3 style="margin: 0 0 0.5rem; font-size: 1rem;">Chat</h3>
+      <p style="margin: 0; color: var(--sl-color-gray-2); font-size: 0.95rem;">Streaming token callback on send(). Debounce wired through to chat context for responsive interactions.</p>
+    </div>
+    <div style="padding: 1rem; border-left: 3px solid var(--sl-color-accent); background: var(--sl-color-bg-nav); border-radius: 6px;">
+      <h3 style="margin: 0 0 0.5rem; font-size: 1rem;">Core APIs</h3>
+      <p style="margin: 0; color: var(--sl-color-gray-2); font-size: 0.95rem;">Buffer API (insert, delete, lines, to_string), cursor tracking, Workspace::open_file/save_file, file watcher with auto-reindex.</p>
+    </div>
+  </div>
+
+  <h2 style="font-size: 1.75rem; margin-bottom: 1.5rem;">Quick Start</h2>
+  <p style="color: var(--sl-color-gray-2); margin-bottom: 1rem;">Clone, build, configure your backend, and run your first completion in minutes.</p>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+    <a href="/getting-started/" class="card" style="padding: 1.25rem; text-decoration: none; cursor: pointer;">
+      <div style="font-family: 'Geist Mono', monospace; font-size: 1.25rem; color: var(--sl-color-accent); margin-bottom: 0.75rem;">→</div>
+      <p style="margin: 0 0 0.5rem; font-weight: 600; color: var(--sl-color-gray-1);">Getting Started</p>
+      <p style="margin: 0; font-size: 0.9rem; color: var(--sl-color-gray-2);">Prerequisites, build, config setup</p>
+    </a>
+    <a href="/configuration/" class="card" style="padding: 1.25rem; text-decoration: none; cursor: pointer;">
+      <div style="font-family: 'Geist Mono', monospace; font-size: 1.25rem; color: var(--sl-color-accent); margin-bottom: 0.75rem;">⚙</div>
+      <p style="margin: 0 0 0.5rem; font-weight: 600; color: var(--sl-color-gray-1);">Configuration</p>
+      <p style="margin: 0; font-size: 0.9rem; color: var(--sl-color-gray-2);">Config reference and backends</p>
+    </a>
+    <a href="/architecture/" class="card" style="padding: 1.25rem; text-decoration: none; cursor: pointer;">
+      <div style="font-family: 'Geist Mono', monospace; font-size: 1.25rem; color: var(--sl-color-accent); margin-bottom: 0.75rem;">◇</div>
+      <p style="margin: 0 0 0.5rem; font-weight: 600; color: var(--sl-color-gray-1);">Architecture</p>
+      <p style="margin: 0; font-size: 0.9rem; color: var(--sl-color-gray-2);">Crate map and design</p>
+    </a>
+  </div>
+</section>
 
 <p class="version-strip">
-  Current release: <a href="https://github.com/idep-editor/idep/releases/tag/v0.0.1">v0.0.1</a>
-  · Next: v0.0.2 — Ollama completions end-to-end
+  Current release: <a href="https://github.com/idep-editor/idep/releases/tag/v0.0.2">v0.0.2</a>
+  · <a href="https://github.com/idep-editor/idep/blob/main/TODO.md">Roadmap</a>
   · <a href="https://idep.dev">idep.dev ↗</a>
 </p>
 

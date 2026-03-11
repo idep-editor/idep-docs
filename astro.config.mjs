@@ -16,6 +16,7 @@ export default defineConfig({
 				{
 					label: 'Getting Started',
 					items: [
+						{ label: 'Getting Started', slug: 'getting-started' },
 						{ label: 'Installation', slug: 'getting-started/installation' },
 						{ label: 'First Run', slug: 'getting-started/first-run' },
 					],
@@ -23,8 +24,15 @@ export default defineConfig({
 				{
 					label: 'Configuration',
 					items: [
+						{ label: 'Configuration', slug: 'configuration' },
 						{ label: 'Overview', slug: 'configuration/overview' },
 						{ label: 'Backends', slug: 'configuration/backends' },
+					],
+				},
+				{
+					label: 'Architecture',
+					items: [
+						{ label: 'Architecture', slug: 'architecture' },
 					],
 				},
 				{
