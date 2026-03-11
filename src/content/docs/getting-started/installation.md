@@ -3,8 +3,6 @@ title: Installation
 description: How to install and build Idep from source.
 ---
 
-> ⚠️ **Pre-alpha.** No release binary yet. Build from source.
-
 ## Prerequisites
 
 - Rust toolchain — install via [rustup](https://rustup.rs)
@@ -18,11 +16,10 @@ Idep pins its Rust version via `rust-toolchain.toml` in the repo root.
 ```bash
 git clone https://github.com/idep-editor/idep
 cd idep
-cargo build
+cargo build --release
 ```
 
-A successful build means the AI backend layer is compiled and ready.
-The editor UI is not available yet — see the [roadmap](https://github.com/idep-editor/idep/blob/main/TODO.md).
+A successful build means completions, chat, and core buffer/workspace APIs are functional in v0.0.2. See the [roadmap](https://github.com/idep-editor/idep/blob/main/TODO.md) for UI availability.
 
 ## Configure
 
